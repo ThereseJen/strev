@@ -86,6 +86,30 @@ button {
             transform: rotate(360deg); /* Full rotasjon (360 grader) */
         }
     }
+@keyframes rotate {
+        from {
+            transform: rotate(0deg); /* Startposisjon (ingen rotasjon) */
+        }
+        to {
+            transform: rotate(360deg); /* Full rotasjon (360 grader) */
+        }
+    }
+
+@media (max-width: 768px) {
+.container{
+width: 100%;
+}
+.box-container{
+flex-direction: column;
+width: 100%;
+}
+.box {
+width: 100%;
+margin: 10px 0;
+}
+
+
+}
 
 
 </style>
