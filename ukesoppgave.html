@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ukesoppgave</title>
+    <style>
+
+.body {
+    background-color: lightblue;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+#header {
+  background-color: pink; 
+  padding: 10px; 
+  text-align: center;
+  font-size: large;
+  border: 1px solid;
+  width: 49%;
+  max-height: 150px; 
+  overflow: hidden; 
+  cursor: not-allowed;
+}
+
+.box {
+background-color: lightblue;
+padding: 20px;
+border: 1px solid;
+margin: 10px;
+width: 50%;
+margin: 10px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 20px 30px;
+    background-color: cornflowerblue;
+    color: white;
+    cursor: pointer;
+}
+
+.box img {
+    max-width: 100%;
+    height: auto;
+}
+
+.active {
+    background-color: lightgreen !important;
+}
+
+.box:hover {
+    background-color: burlywood;
+}
+
+#header:hover {
+    background-color:darksalmon
+}
+
+.rotate-animation {
+    animation: rotate 2s linear 1;
+}
+
+@keyframes rotate {
+        from {
+            transform: rotate(0deg); /* Startposisjon (ingen rotasjon) */
+        }
+        to {
+            transform: rotate(360deg); /* Full rotasjon (360 grader) */
+        }
+    }
+
+
+</style>
+</head>
+
+<body style="background-color: lightgrey;">
+
+<div class="container">
+<div id="header">
+<h1 class = "rotate-animation">Therese</h1>
+</div>
+
+<div class="box-container">
+<div class="box">
+<h2>Jeg har litt forskjellige interesser</h2>
+<ul style="font-size: larger;">
+<li>Gaming, helst RDR2</li>
+<br>
+<li>Padle i kajakken min</li>
+<br>
+<li>Være ute i natur, helst ved havet</li>
+<br>
+<li>Se på Premier League</li>
+</ul>
+</div>
+
+
+<div class="box">
+<h2>Bilde</h2>
+<img src ="/img/bildeavmeg.jpg" alt= Dette er et bilde av meg selv>
+</div>
+</div>
+</div>
+
+<div class="button-container">
+<button id="byttfarge">Klikk her og se hva som skjer</button>
+</div>
+
+
+<script>
+
+const button = document.getElementById('byttfarge'); //getelementbyid for å få et enkeltobjekt til å reagere.
+const header = document.getElementById('header')
+const boxes = document.querySelectorAll('.box');
+
+button.addEventListener('click', () => {
+header.classList.toggle('active');
+boxes.forEach(box => box.classList.toggle('active')); //foreach for å få flere bokser til å reagere.
+ });
+</script>
+
+</body>
+
+
+</html>
